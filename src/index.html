@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lines to Content Layout Animation | Codrops</title>
+		<!-- Generate Meta Tags via https://www.opengraph.xyz -->
+		<meta name="description" content="A simple layout switch example where we go from a typography row view with inline images to a large image preview with more content." />
+		<meta name="keywords" content="gsap, layout, flip plugin, animation, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" href="https://use.typekit.net/jdl7wqk.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+		<script src="//tympanus.net/codrops/adpacks/analytics.js"></script>
+	</head>
+	<body class="loading">
+		<main>
+			<div class="frame">
+				<h1 class="frame__title">Lines to Content Layout Animation</h1>
+				<nav class="frame__links">
+					<a class="hover-line" href="http://tympanus.net/Development/LetterShuffleMenu/">Previous demo</a>
+					<a class="hover-line" href="https://tympanus.net/codrops/?p=60052">Article</a>
+					<a class="hover-line" href="https://github.com/codrops/LinesToLayout">GitHub</a>
+				</nav>
+			</div>
+			<div class="intro">
+				<div class="row row--1"><span class="row__text oh"><span data-direction="top">Facts do</span></span> <span class="row__text oh"><span data-direction="right">not</span></span></div>
+				<div class="row row--2"><span class="row__text oh"><span data-direction="left">cease</span></span> <span class="row__text oh"><span data-direction="bottom">to exist</span></span></div>
+				<div class="row row--3"><span class="row__text oh"><span data-direction="right">because</span></span> <span data-direction="right" class="row__text oh"><span data-direction="right">they</span></span></div>
+				<div class="row row--4"><span class="row__text oh"><span data-direction="bottom">are ignored</span></span></div>
+				<div class="image image--up">
+					<div class="image__inner" style="background-image:url(img/1.jpg)" data-direction="right"></div>
+				</div>
+				<div class="image image--down">
+					<div class="image__inner" style="background-image:url(img/2.jpg)" data-direction="left"></div>
+				</div>
+			</div>
+			<section class="content-wrap">
+				<div class="content">
+					<div class="content__row content__row--image"></div>
+					<div class="content__row content__row--text">
+						<h2 class="content__title">
+							<span class="oh"><span>The progressive power</span></span><br/>
+							<span class="oh"><span>of frequencies</span></span>
+						</h2>
+						<span class="content__number"><span class="oh"><span>1</span></span></span>
+						<button class="content__back unbutton">
+							<svg viewBox="0 0 50 9"><path d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg>
+						</button>
+						<div class="content__meta">
+							<span class="content__meta-text"><span class="oh"><span>Mind Depth</span></span></span>
+							<span class="content__meta-text content__meta-text--center"><span class="oh"><span>Souls</span></span> <br/><span class="oh"><span>for freedom</span></span></span>
+							<span class="content__meta-text"><span class="oh"><span>Made by Humans</span></span> <br/><span class="oh"><span>in 2022</span></span></span>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="content__row content__row--text">
+						<h2 class="content__title">
+							<span class="oh"><span>Quantum enhancement</span></span><br/>
+							<span class="oh"><span>for the world</span></span>
+						</h2>
+						<span class="content__number"><span class="oh"><span>2</span></span></span>
+						<button class="content__back unbutton">
+							<svg viewBox="0 0 50 9"><path d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path></svg>
+						</button>
+						<div class="content__meta">
+							<span class="content__meta-text"><span class="oh"><span>Novel World</span></span></span>
+							<span class="content__meta-text content__meta-text--center"><span class="oh"><span>Souls</span></span> <br/><span class="oh"><span>for love</span></span></span>
+							<span class="content__meta-text"><span class="oh"><span>Made by Humans</span></span> <br/><span class="oh"><span>in 2022</span></span></span>
+						</div>
+					</div>
+					<div class="content__row content__row--image"></div>
+				</div>
+			</section>
+		</main>
+		<svg class="cursor" width="100" height="100" viewBox="0 0 100 100">
+			<defs>
+				<filter id="cursor-filter" x="-50%" y="-50%" width="200%" height="200%" 
+				filterUnits="objectBoundingBox">
+					<feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+					<feOffset dx="0" result="warpOffset" />
+					<feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="40" in="SourceGraphic" in2="warpOffset" />
+				</filter>
+			</defs>
+			<circle class="cursor__inner" cx="50" cy="50" r="10"/>
+		</svg>
+		<svg class="cursor" width="100" height="100" viewBox="0 0 100 100" data-amt="0.15" data-radius-enter="40">
+			<circle class="cursor__inner" cx="50" cy="50" r="10"/>
+		</svg>
+		<script src="https://tympanus.net/codrops/adpacks/cda_sponsor.js"></script>
+		<script type="module" src="js/index.js"></script>
+	</body>
+</html>
